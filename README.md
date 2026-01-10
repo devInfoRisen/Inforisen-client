@@ -5,7 +5,7 @@ This is a [Next.js](https://nextjs.org) project with [`create-next-app`](https:/
 First, clone this repository:
 
 ```bash
-git clone https://github.com/mohammad-anar/next-template.git
+git clone https://github.com/devInfoRisen/Inforisen-client.git
 ```
 
 Then install the dependencies:
