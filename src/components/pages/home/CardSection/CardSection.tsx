@@ -94,7 +94,7 @@ const cards = [
 
 export default function CardSection() {
   return (
-    <main className="min-h-screen  py-16 px-4">
+    <main className="min-h-screen  py-16">
       <div className="container mx-auto">
         {/* Header */}
        {/* Header */}
@@ -118,7 +118,7 @@ export default function CardSection() {
             <div key={card.id} className={`${card.bgColor} rounded-3xl overflow-hidden shadow-lg`}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                 {/* Left Content */}
-                <div className="p-8 md:p-12 flex flex-col justify-center">
+                <div className="p-6 md:p-12 flex flex-col justify-center">
                   <p className="text-xs font-bold text-gray-700 tracking-widest mb-4 opacity-75">{card.category}</p>
                   <h2 className="text-3xl font-bold text-gray-900 mb-4">{card.title}</h2>
                   <p className="text-gray-800 mb-6 leading-relaxed text-sm md:text-base">{card.description}</p>

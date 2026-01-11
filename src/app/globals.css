@@ -1,5 +1,5 @@
 /* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -33,6 +33,7 @@ h1, h2, h3, h4, h5, h6 { font-family: "Helvetica Neue", sans-serif;
 /* Optional: create a class to apply Playfair Display anywhere */
 .font-playfair {
   font-family: "Playfair Display", serif;
+  font-style: italic
 }
 
 

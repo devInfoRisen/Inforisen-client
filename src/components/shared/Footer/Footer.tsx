@@ -1,165 +1,184 @@
-"use client";
+"use client"
+
+import { motion } from "framer-motion"
+import Image from "next/image"
+import Link from "next/link"
 import logo from "@/assets/logo/logo.png";
-import {
-  InstagramOutlined,
-  MailOutlined,
-  PhoneFilled,
-} from "@ant-design/icons";
-import Image from "next/image";
-import Link from "next/link";
-import {
-  FaFacebook,
-  FaGithub,
-  FaLocationPinLock,
-  FaXTwitter,
-} from "react-icons/fa6";
+import footer from "@/assets/footer.png";
 
-const thirdRow = [
-  {
-    title: "About Us",
-    link: "/about-us",
-  },
-  {
-    title: "Clinic List",
-    link: "/clinic-list",
-  },
-  {
-    title: "Service",
-    link: "/service",
-  },
-  {
-    title: "Subscription",
-    link: "/subscription",
-  },
-  {
-    title: "FAQ",
-    link: "/faq",
-  },
-  {
-    title: "Contact Us",
-    link: "/contact-us",
-  },
-  {
-    title: "Blogs",
-    link: "/blogs",
-  },
-];
-const Footer = () => {
+
+export function Footer() {
+  const services = [
+    { title: "Web Design", href: "/services#web-design" },
+    { title: "Webflow", href: "/services#webflow" },
+    { title: "MVP Development", href: "/services#mvp-development" },
+    { title: "SaaS Design", href: "/services#saas-design" },
+    { title: "MVP Web", href: "/services#mvp-web" },
+    { title: "Mobile App", href: "/services#mobile-app" },
+  ]
+
+  const services2 = [
+    { title: "Branding", href: "/services#branding" },
+    { title: "UI/UX Design", href: "/services#ui-ux-design" },
+    { title: "UI/UX Consulting", href: "/services#ui-ux-consulting" },
+    { title: "Brand Identity", href: "/services#brand-identity" },
+    { title: "Corporate Identity", href: "/services#corporate-identity" },
+    { title: "Motion Graphics", href: "/services#motion-graphics" },
+  ]
+
+  const quickLinks = [
+    { title: "Work", href: "/work" },
+    { title: "About", href: "/about" },
+    { title: "Contact", href: "/contact" },
+    { title: "Pricing", href: "/pricing" },
+    { title: "Career", href: "/career" },
+    { title: "Blog", href: "/blog" },
+  ]
+
+  const quickLinks2 = [
+    { title: "Sitemap", href: "/sitemap" },
+    { title: "Privacy Policy", href: "/privacy-policy" },
+    { title: "Terms & Condition", href: "/terms" },
+  ]
+
   return (
-    <div>
-      {/* top  */}
-      <div className="bg-primary py-20">
-        <div className="container">
-          <div className=" grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-5">
-            {/* col 1 */}
-            <div className="flex flex-col gap-6">
-              <div className="h-24 w-72 ">
-                <Image
-                  src={logo}
-                  className="object-contain"
-                  height={400}
-                  width={400}
-                  alt="image"
-                />
+    <footer className="relative bg-[#0a0a0a] text-white overflow-hidden">
+      {/* Animated Blue Glow Orb */}
+     <motion.div
+  className="absolute w-[380px] h-[380px] rounded-full bg-blue-500/60 blur-[130px]"
+  animate={{
+    x: [600, 700, 650, 750, 600],
+    y: [200, 250, 300, 220, 200],
+  }}
+  transition={{
+    duration: 7, // faster
+    repeat: Number.POSITIVE_INFINITY,
+    repeatType: "reverse",
+    ease: "easeInOut",
+  }}
+  style={{
+    background:
+      "radial-gradient(circle, rgba(59,130,246,0.9) 0%, rgba(59,130,246,0.4) 40%, rgba(59,130,246,0) 75%)",
+  }}
+/>
+
+
+      <div className="container mx-auto pt-16 pb-8 relative z-10">
+        {/* Top Section */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          {/* Company Info */}
+          <div className="space-y-6">
+            {/* Logo */}
+            <div className="w-10 h-10">
+               <Link href="/" className="flex items-center gap-2 w-48">
+          <Image
+            src={logo}
+            alt="Inforisen"
+            width={260}
+            height={60}
+            className="object-contain"
+          />
+        </Link>
+            </div>
+
+            <p className="text-white text-sm leading-relaxed">
+              We're a passionate team of UI/UX designers
+              <br />
+              dedicated to creating intuitive digital experiences.
+              
+              With years of experience.
+            </p>
+
+            <div className="space-y-4">
+              <div>
+                <p className="text-gray-500 text-xs uppercase tracking-wider">PHONE:</p>
+                <p className="text-white  font-medium">0987654321</p>
               </div>
-              <p className="text-gray-light text-lg font-semibold">
-                ClinicaDigitala
-              </p>
-              <div className="flex flex-col gap-4">
-                {/* flex content */}
-                <div className="flex items-start gap-4 text-white">
-                  <div className="bg-white p-2 rounded-full text-white">
-                    <FaLocationPinLock className="text-primary" size={18} />
+
+              <div>
+                <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">ADDRESS:</p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-white font-medium">Germany:</p>
+                    <p className="text-gray-400 text-sm">[Address Goes Here]</p>
                   </div>
-                  <p className="mt-1">
-                    Calea București 251, Brașov 500299, Romania
-                  </p>
-                </div>
-                {/* flex content */}
-                <div className="flex items-start gap-4 text-white">
-                  <div className="bg-white p-2 rounded-full text-white">
-                    <PhoneFilled className="text-primary" size={18} />
+                  <div>
+                    <p className="text-white font-medium">Bangladesh:</p>
+                    <p className="text-gray-400 text-sm">[Address Goes Here]</p>
                   </div>
-                  <p className="mt-1">123-456-7890</p>
-                </div>
-                {/* flex content */}
-                <div className="flex items-start gap-4 text-white">
-                  <div className="bg-white p-2 rounded-full text-white">
-                    <MailOutlined className="text-primary" size={18} />
-                  </div>
-                  <p className="mt-1">user@gmail.com</p>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* col 2 */}
-            <div className="flex flex-col gap-6">
-              {thirdRow?.map((item, i) => (
-                <Link href={item?.link} key={i} className=" inline-block w-fit">
-                  <div className="cursor-pointer text-white hover:text-tomato ">
-                    {item?.title}
-                  </div>
-                </Link>
-              ))}
+          {/* Services */}
+          <div className="md:col-span-2">
+            <h3 className="text-white font-semibold mb-6 text-[16px]">SERVICES</h3>
+            <div className="grid grid-cols-2 gap-x-16 gap-y-3">
+              <ul className="space-y-3">
+                {services.map((service) => (
+                  <li key={service.title}>
+                    <Link href={service.href} className="text-gray-400 hover:text-white transition-colors text-sm">
+                      {service.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <ul className="space-y-3">
+                {services2.map((service) => (
+                  <li key={service.title}>
+                    <Link href={service.href} className="text-gray-400 hover:text-white transition-colors text-sm">
+                      {service.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
+          </div>
 
-            {/* col 3 */}
-            <div className="text-white">
-              <p className="text-md font-bold mb-6">Do you have a Clinic?</p>
-              <p className="text-md font-medium mb-6">Become a Partner</p>
-              {/* get is touch  */}
-              <div className="mt-16">
-                <p className="text-md font-normal mb-6">Follow Us</p>
-
-                <div className="flex items-center gap-5">
-                  <div className="bg-transparent hover:bg-secondary duration-300 p-2 rounded-full border border-white">
-                    <FaXTwitter className="text-white" size={18} />
-                  </div>
-                  <div className="bg-transparent hover:bg-secondary duration-300 p-2 rounded-full border border-white">
-                    <FaFacebook className="text-white" size={18} />
-                  </div>
-                  <div className="bg-transparent hover:bg-secondary duration-300 p-2 rounded-full border border-white">
-                    <InstagramOutlined className="text-white" size={18} />
-                  </div>
-                  <div className="bg-transparent hover:bg-secondary duration-300 p-2 rounded-full border border-white">
-                    <FaGithub className="text-white" size={18} />
-                  </div>
-                </div>
-              </div>
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-white font-semibold mb-6 tracking-wide">QUICK LINKS</h3>
+            <div className="grid grid-cols-2 gap-x-8 gap-y-3">
+              <ul className="space-y-3">
+                {quickLinks.map((link) => (
+                  <li key={link.title}>
+                    <Link href={link.href} className="text-gray-400 hover:text-white transition-colors text-sm">
+                      {link.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <ul className="space-y-3">
+                {quickLinks2.map((link) => (
+                  <li key={link.title}>
+                    <Link href={link.href} className="text-gray-400 hover:text-white transition-colors text-sm">
+                      {link.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
-      </div>
-      {/* bottom  */}
-      <div className="bg-secondary py-5">
-        <div className="container flex flex-col md:flex-row items-center justify-between text-white">
-          <div>
-            <ul className="list-disc flex items-center gap-5 space-x-6 flex-wrap">
-              <li>
-                <Link href={"#"} className="hover:underline">
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link href={"#"} className="hover:underline">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href={"#"} className="hover:underline">
-                  Cookies
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            © 2024 – 2029 Dariustodirascu Medical & Healthcare all rights
-            reserved.{" "}
-          </div>
+
+        {/* Large Brand Name */}
+        <div className="relative py-8">
+           <Image
+            src={footer}
+            alt="Inforisen"
+            width={1400}
+            height={40}
+            className="object-contain"
+          />
+       
+        </div>
+
+        {/* Copyright */}
+        <div className="text-center pt-8 border-t border-gray-800/50">
+          <p className="text-gray-500 text-sm">© 2026, Inforisen | All Rights Reserved.</p>
         </div>
       </div>
-    </div>
-  );
-};
-
-export default Footer;
+    </footer>
+  )
+}

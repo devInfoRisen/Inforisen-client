@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import Image from "next/image";
 import arrow from "@/assets/logo/arrow.png";
 
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -115,7 +116,7 @@ export default function SuccessStories() {
   };
 
   return (
-    <section className="py-20 px-4 md:px-8 grid grid-cols-1">
+    <section className="py-16  grid grid-cols-1">
       <div className="container mx-auto">
         {/* Header */}
         <SectionHeader
@@ -145,7 +146,7 @@ function StoryCard({ story }: { story: (typeof stories)[0] }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="px-3">
+    <div className="">
       <div
         className="group relative rounded-2xl overflow-hidden aspect-[4/5] shadow-xl cursor-pointer"
         onMouseEnter={() => setIsHovered(true)}
@@ -186,13 +187,13 @@ function StoryCard({ story }: { story: (typeof stories)[0] }) {
         {!isHovered && (
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent">
             <div className="bg-white/15 backdrop-blur-md  p-2 border border-white/20">
-              <h3 className="text-white  text-[14px] md:text-[16px] tracking-tight">
+              <h3 className="text-white  text-[12px] md:text-[14px] tracking-tight">
                 {story.name}
               </h3>
-              <p className="text-gray-200 text-sm mt-0.5">
+              <p className="text-gray-200 text-[12px] mt-0.5">
                 {story.title}
               </p>
-              <p className="text-gray-300/90 text-xs md:text-sm font-medium ">
+              <p className="text-gray-300/90 text-[12px]  font-medium ">
                 {story.company}
               </p>
             </div>

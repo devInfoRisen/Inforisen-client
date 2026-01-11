@@ -42,14 +42,14 @@ export default function SectionHeader({
       </div>
 
       {/* Title */}
-      <h1 className="text-5xl leading-tight">
+      <h1 className=" text-4xl md:text-5xl leading-tight">
         <span className="font-bold text-gray-900">
           {title}
           <br />
           {titleSecondLine}
         </span>
         {italicTitle && (
-          <span className="italic font-playfair"> {italicTitle}</span>
+          <span className=" font-playfair"> {italicTitle}</span>
         )}
       </h1>
     </div>
