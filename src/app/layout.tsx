@@ -33,7 +33,7 @@ export default function RootLayout({
       <head></head>
       <body
         suppressHydrationWarning={true}
-        className={`${inter.variable} antialiased !bg-white`}
+        className={`${inter.variable} antialiased !bg-[#F5F5F5]`}
       >
         <NextUiProvider>
           <ReduxProvider>

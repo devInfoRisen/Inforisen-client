@@ -1,68 +1,47 @@
 "use client";
+
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const NavMenu = ({
-  className,
-}: {
-  className?: string;
-  isShowBorder?: boolean;
-}) => {
+const NavMenu = ({ className }: { className?: string }) => {
   const pathname = usePathname();
+
+  const menuItem = (href: string, label: string) => {
+    const isActive = pathname === href;
+
+    return (
+      <Link href={href}>
+        <span
+          className={cn(
+            "relative cursor-pointer text-sm  text-gray-800 transition-colors duration-200",
+            "hover:text-blue-600",
+            isActive && "text-blue-600"
+          )}
+        >
+          {label}
+
+          {/* underline */}
+          <span
+            className={cn(
+              "absolute left-0 -bottom-1 h-[2px] w-full bg-blue-600 scale-x-0 transition-transform duration-300 origin-left",
+              "group-hover:scale-x-100",
+              isActive && "scale-x-100"
+            )}
+          />
+        </span>
+      </Link>
+    );
+  };
+
   return (
-    <div className={cn("flex  gap-6  font-normal ps-3", className)}>
-      <Link href={"/"}>
-        <div
-          className={cn(
-            "cursor-pointer  hover:underline text-md text-white hover:text-tomato transition duration-200",
-            pathname === "/" && "text-tomato font-semibold"
-          )}
-        >
-          Home
-        </div>
-      </Link>
-      <Link href={"/services"}>
-        <div
-          className={cn(
-            "cursor-pointer hover:underline text-md text-white hover:text-tomato transition duration-200",
-            pathname === "/services" && "text-tomato font-semibold"
-          )}
-        >
-          Services
-        </div>
-      </Link>
-      <Link href={"/about-us"}>
-        <div
-          className={cn(
-            "cursor-pointer hover:underline text-md text-white hover:text-tomato transition duration-200",
-            pathname === "/about-us" && "text-tomato font-semibold"
-          )}
-        >
-          About Us
-        </div>
-      </Link>
-      <Link href={"/contact-us"}>
-        <div
-          className={cn(
-            "cursor-pointer hover:underline text-md text-white hover:text-tomato transition duration-200",
-            pathname === "/contact-us" && "text-tomato font-semibold"
-          )}
-        >
-          Contact Us
-        </div>
-      </Link>
-      <Link href={"/faq"}>
-        <div
-          className={cn(
-            "cursor-pointer hover:underline text-md text-white hover:text-tomato transition duration-200",
-            pathname === "/faq" && "text-tomato font-semibold"
-          )}
-        >
-          FAQ
-        </div>
-      </Link>
-    </div>
+    <nav className={cn("flex items-center gap-8", className)}>
+     
+      {menuItem("/about", "About")}
+      {menuItem("/services", "Services")}
+      {menuItem("/works", "Works")}
+      {menuItem("/team", "Team")}
+    </nav>
   );
 };
 

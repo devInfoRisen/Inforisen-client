@@ -1,140 +1,99 @@
 "use client";
+
 import logo from "@/assets/logo/logo.png";
 import { Drawer, Space } from "antd";
 import Image from "next/image";
 import { useState } from "react";
 import { IoClose, IoMenu } from "react-icons/io5";
 import NavMenu from "./NavMenu";
-
-import { Accordion, AccordionItem } from "@nextui-org/react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { ArrowUpRight } from "lucide-react";
+
 const ForMobile = () => {
   const [open, setOpen] = useState(false);
 
-  const showDrawer = () => {
-    setOpen(true);
-  };
-
-  const onClose = () => {
-    setOpen(false);
-  };
-
   return (
-    <div className="flex justify-between items-center px-3 lg:hidden">
-      <Link href={"/"} className="">
-        <div className="flex items-center gap-2 h-16 w-16">
+    <div className="flex justify-between items-center px-4 lg:hidden">
+      {/* Logo */}
+      <Link href="/">
+        <div className="flex items-center h-16 w-20">
           <Image
             src={logo}
-            alt="Booksy.buzz"
-            width={200}
-            height={200}
-            className="rounded object-contain"
+            alt="Logo"
+            width={160}
+            height={40}
+            className="object-contain"
           />
         </div>
       </Link>
-      <div>
-        <button onClick={showDrawer} className="mt-3 ml-3 p-1">
-          <IoMenu size={25} />
-        </button>
-        <Drawer
-          title="Menu"
-          placement="left"
-          width="85%"
-          open={open}
-          onClose={onClose}
-          closeIcon={false}
-          extra={
-            <Space>
-              <button onClick={onClose}>
-                <IoClose className="hover:text-red-500 " size={25} />
-              </button>
-            </Space>
-          }
-        >
-          <div className=" h-full flex flex-col justify-between  items-start">
-            <div className=" w-full">
-              <div onClick={onClose}>
-                <div className=" w-full text-base">
-                  <NavMenu className="flex-col mb-4" />
-                  <div className="ps-1 ">
-                    <Accordion isCompact>
-                      <AccordionItem
-                        key="1"
-                        aria-label="Other Service"
-                        title="Other Service"
-                      >
-                        <div className=" ps-1">
-                          <Link href={"/gutters"}>
-                            <div
-                              className={cn(
-                                "cursor-pointer hover:text-primary hover:bg-slate-100 p-2 mb-2 rounded transition duration-200"
-                              )}
-                            >
-                              Gutter
-                            </div>
-                          </Link>{" "}
-                          <Link href={"/commercial"}>
-                            <div
-                              className={cn(
-                                "cursor-pointer hover:text-primary hover:bg-slate-100 p-2 mb-2 rounded transition duration-200"
-                              )}
-                            >
-                              Commercial
-                            </div>
-                          </Link>
-                        </div>
-                      </AccordionItem>
-                    </Accordion>
-                  </div>
-                  <div className="ps-1 ">
-                    <Accordion isCompact>
-                      <AccordionItem
-                        key="1"
-                        aria-label="Pricing"
-                        title="Pricing"
-                      >
-                        <div className=" ps-1">
-                          <Link href={"/pricing-cost-calculator/roofing"}>
-                            <div
-                              // className="cursor-pointer hover:text-primary hover:bg-slate-100 p-2 mb-2 rounded"
-                              className={cn(
-                                "cursor-pointer hover:text-primary hover:bg-slate-100 p-2 mb-2 rounded transition duration-200"
-                              )}
-                            >
-                              Roof Cost Calculator
-                            </div>
-                          </Link>
-                          <Link href={"/pricing-cost-calculator/siding"}>
-                            <div
-                              // className="cursor-pointer hover:text-primary hover:bg-slate-100 p-2 rounded"
-                              className={cn(
-                                "cursor-pointer hover:text-primary hover:bg-slate-100 p-2 mb-2 rounded transition duration-200"
-                              )}
-                            >
-                              Siding Cost Calculator
-                            </div>
-                          </Link>
-                          <Link href={"/pricing-cost-calculator/window"}>
-                            <div
-                              // className="cursor-pointer hover:text-primary hover:bg-slate-100 p-2 rounded"
-                              className={cn(
-                                "cursor-pointer hover:text-primary hover:bg-slate-100 p-2 mb-2 rounded transition duration-200"
-                              )}
-                            >
-                              Window Cost Calculator
-                            </div>
-                          </Link>
-                        </div>
-                      </AccordionItem>
-                    </Accordion>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+      {/* Menu Button */}
+      <button
+        onClick={() => setOpen(true)}
+        className="p-2 rounded-lg hover:bg-gray-100 transition"
+      >
+        <IoMenu size={26} />
+      </button>
+
+      {/* Drawer */}
+      <Drawer
+        placement="left"
+        width="85%"
+        open={open}
+        onClose={() => setOpen(false)}
+        closeIcon={false}
+        bodyStyle={{ padding: 0 }}
+        extra={
+          <Space>
+            <button
+              onClick={() => setOpen(false)}
+              className="p-2 rounded-lg hover:bg-gray-100 transition"
+            >
+              <IoClose size={26} />
+            </button>
+          </Space>
+        }
+      >
+        {/* Glass Header */}
+        <div className="px-4 py-4 border-b bg-white/70 backdrop-blur-md">
+          <Image
+            src={logo}
+            alt="Logo"
+            width={140}
+            height={40}
+            className="object-contain"
+          />
+        </div>
+
+        {/* Content */}
+        <div className="px-4 py-6 space-y-6">
+          {/* Main Nav */}
+          <div onClick={() => setOpen(false)}>
+            <NavMenu className="flex-col gap-4 text-base" />
           </div>
-        </Drawer>
-      </div>
+
+          {/* Contact Us Button (same as PC) */}
+          <Link href="/contact" onClick={() => setOpen(false)}>
+            <div className="group flex items-center justify-between px-5 py-3 bg-white rounded-xl shadow">
+              <span className="text-sm font-medium text-gray-800">
+                Contact Us
+              </span>
+
+              <span className="flex items-center justify-center w-9 h-9 rounded-full bg-blue-600 group-hover:bg-[#0E3B76]">
+                <ArrowUpRight
+                  size={16}
+                  className="
+                    text-white
+                    transition-transform duration-300 ease-out
+                    group-hover:rotate-45
+                    group-active:rotate-90
+                  "
+                />
+              </span>
+            </div>
+          </Link>
+        </div>
+      </Drawer>
     </div>
   );
 };

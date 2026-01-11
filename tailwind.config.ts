@@ -59,7 +59,7 @@ export default {
         padding: "20px",
         center: true,
         screens: {
-          DEFAULT: "1600px",
+          DEFAULT: "1400px",
         },
       },
     },
