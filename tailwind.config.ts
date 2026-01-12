@@ -19,8 +19,8 @@ export default {
 
         // Match Ant Design tokens
         primary: {
-          DEFAULT: "#00B2D8", // Blue
-          dark: "#0092B3",
+          DEFAULT: "#1066D4", // Blue
+          dark: "#0E3B76",
           light: "#33C7E2",
         },
         secondary: {
