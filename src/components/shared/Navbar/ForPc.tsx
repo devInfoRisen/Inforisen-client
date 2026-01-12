@@ -10,11 +10,20 @@ const ForPc = () => {
   return (
     <div className="w-full flex justify-center pt-4">
       {/* Glass Navbar */}
-      <div className="container hidden lg:flex items-center justify-between px-6 py-3
-        rounded-2xl
-        bg-white/70 backdrop-blur-md
-        shadow-lg border border-white/40
-      ">
+     <div
+  className="
+    container hidden lg:flex items-center justify-between px-6 py-3
+    rounded-2xl
+    bg-white/20 backdrop-blur-2xl
+    shadow-[0_8px_32px_rgba(31,38,135,0.25)]
+    border border-white/30
+    relative overflow-hidden
+    before:absolute before:inset-0 before:rounded-2xl
+    before:bg-gradient-to-br before:from-white/40 before:to-white/5
+    before:pointer-events-none
+  "
+>
+
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 w-48">
           <Image

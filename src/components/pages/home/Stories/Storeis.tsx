@@ -28,7 +28,7 @@ const stories = [
     title: "Oval CEO",
     company: "edvive",
     image: image1,
-   video: "/video1.mp4",
+    video: "/video1.mp4",
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const stories = [
     title: "Oval CEO",
     company: "edvive",
     image: image1,
-   video: "/video1.mp4",
+    video: "/video1.mp4",
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ const stories = [
     title: "Oval CEO",
     company: "edvive",
     image: image1,
-   video: "/video1.mp4",
+    video: "/video1.mp4",
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const stories = [
     title: "Oval CEO",
     company: "edvive",
     image: image1,
-   video: "/video1.mp4",
+    video: "/video1.mp4",
   },
   {
     id: 6,
@@ -68,7 +68,7 @@ const stories = [
     title: "Oval CEO",
     company: "edvive",
     image: image1,
-   video: "/video1.mp4",
+    video: "/video1.mp4",
   },
   // ... other items
 ];
@@ -107,35 +107,42 @@ export default function SuccessStories() {
     arrows: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    centerMode: false,  // keep false if you don't want centered slides
+    // Add space between slides:
+    cssEase: "ease-in-out",
     responsive: [
-      { breakpoint: 1280, settings: { slidesToShow: 3 } },
-      { breakpoint: 1024, settings: { slidesToShow: 3 } },
-      { breakpoint: 768, settings: { slidesToShow: 2 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
+      { breakpoint: 1280, settings: { slidesToShow: 3, slidesToScroll: 1 } },
+      { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 1 } },
+      { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+      { breakpoint: 640, settings: { slidesToShow: 1, slidesToScroll: 1 } },
     ],
   };
+
 
   return (
     <section className="py-16  grid grid-cols-1">
       <div className="container mx-auto">
         {/* Header */}
         <SectionHeader
-  label="CLIENT STORIES"
-  title="Success Stories"
-  titleSecondLine="That"
-  italicTitle="Insprise us"
-  arrowSrc={arrow}
-  arrowTop="-10%"
-  arrowLeft="18%"
-/>
+          label="CLIENT STORIES"
+          title="Success Stories"
+          titleSecondLine="That"
+          italicTitle="Insprise us"
+          arrowSrc={arrow}
+          arrowTop="-10%"
+          arrowLeft="18%"
+        />
 
         {/* Slider Container – arrows positioned relative to this */}
         <div className="relative pb-4">
           <Slider {...settings}>
             {stories.map((story) => (
-              <StoryCard key={story.id} story={story} />
+              <div key={story.id} className="px-2"> {/* <-- Add horizontal padding */}
+                <StoryCard story={story} />
+              </div>
             ))}
           </Slider>
+
         </div>
       </div>
     </section>

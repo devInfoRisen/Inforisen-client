@@ -2,6 +2,7 @@ import AboutSection from "@/components/pages/home/AboutSection/AboutSection";
 import CardSection from "@/components/pages/home/CardSection/CardSection";
 import { ContactForm } from "@/components/pages/home/Contact-form/ContactForm";
 import { FaqSection } from "@/components/pages/home/FaqSection/Faq-section";
+import { HeroSection } from "@/components/pages/home/HeroSection/HeroSection";
 import MarqueeNav from "@/components/pages/home/MarqueNav/MarqueNav";
 import { NewsletterCta } from "@/components/pages/home/NewsLetter/NewsLetter";
 import { ServicesGrid } from "@/components/pages/home/ServiceGrid/Service-Grid";
@@ -15,9 +16,7 @@ const HompPage = () => {
   return (
     <>
       {/* <HeroSection /> */}
-      <div className="min-h-[400px]">
-        it's home page
-      </div>
+     <HeroSection/>
       <MarqueeNav/>
       <CardSection/>
       <Story />

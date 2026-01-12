@@ -37,7 +37,7 @@ const NavMenu = ({ className }: { className?: string }) => {
   return (
     <nav className={cn("flex items-center gap-8", className)}>
      
-      {menuItem("/about", "About")}
+      {menuItem("/about-us", "About")}
       {menuItem("/services", "Services")}
       {menuItem("/works", "Works")}
       {menuItem("/team", "Team")}
