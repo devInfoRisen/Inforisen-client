@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import image1 from '@/assets/core.png'
 
-export default function brandPotential() {
+export default function BrandPotential() {
   return (
     <div className='py-20 '>
         <div className='container mx-auto'>

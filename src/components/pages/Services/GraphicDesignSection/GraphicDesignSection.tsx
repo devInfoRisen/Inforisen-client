@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
 import { motion } from "framer-motion"
-import image1 from "@/assets/uiux.png"
+import image1 from "@/assets/graphic-design.png"  // ← replace with your actual graphic design mockup image
 
 const services = [
   { id: "01", name: "UX UI Design", slug: "ux-ui-design" },
@@ -16,13 +16,13 @@ const services = [
   { id: "07", name: "Design System", slug: "design-system" },
 ]
 
-export function UIUXDesignSection() {
+export function GraphicDesignSection() {
   return (
     <section className="py-16">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          
-          {/* Left Side - Image */}
+
+               {/* Left Side - Image */}
           <motion.div
             className="relative"
             whileHover={{ y: -6, scale: 1.03 }}
@@ -31,7 +31,7 @@ export function UIUXDesignSection() {
             <div className="relative aspect-square rounded-lg overflow-hidden">
               <Image
                 src={image1}
-                alt="Modern office workspace with colorful wall art"
+                alt="Crypto wallet and finance app mockups with transaction graphs, wallet balance, and mobile interfaces"
                 fill
                 className="object-cover"
               />
@@ -41,13 +41,11 @@ export function UIUXDesignSection() {
           {/* Right Side - Content */}
           <div>
             <h2 className="text-4xl font-bold text-black mb-4">
-              UI/UX Design
+              Graphic Design
             </h2>
 
             <p className="text-base leading-relaxed mb-8">
-              At Inforisen, we believe everyone should have a great user experience, whether at work or in their free
-              time. We create memorable products for businesses and consumers, and we provide easy-to-use design systems
-              for smooth product updates.
+              At Inforisen, we believe everyone should have a great user experience, whether at work or in their free time. We create memorable products for businesses and consumers, and we provide easy-to-use design systems for smooth product updates.
             </p>
 
             {/* Services List */}
@@ -92,6 +90,8 @@ export function UIUXDesignSection() {
               ))}
             </div>
           </div>
+          
+       
 
         </div>
       </div>

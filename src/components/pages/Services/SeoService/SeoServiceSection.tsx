@@ -4,50 +4,31 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
 import { motion } from "framer-motion"
-import image1 from "@/assets/uiux.png"
+import image1 from "@/assets/seo.png"  // ← replace with your actual SEO services mockup image
 
 const services = [
-  { id: "01", name: "UX UI Design", slug: "ux-ui-design" },
-  { id: "02", name: "UX Consulting", slug: "ux-consulting" },
-  { id: "03", name: "UX Audit", slug: "ux-audit" },
-  { id: "04", name: "UX Research", slug: "ux-research" },
-  { id: "05", name: "Usability Testing", slug: "usability-testing" },
-  { id: "06", name: "Wireframe & Prototyping", slug: "wireframe-prototyping" },
-  { id: "07", name: "Design System", slug: "design-system" },
+  { id: "01", name: "Branding", slug: "branding" },
+  { id: "02", name: "Brand Identity", slug: "brand-identity" },
+  { id: "03", name: "Corporate Identity", slug: "corporate-identity" },
+  { id: "04", name: "Brand Strategy", slug: "brand-strategy" },
+  { id: "05", name: "Logo Design", slug: "logo-design" },
+  { id: "06", name: "Startup Branding", slug: "startup-branding" },
 ]
 
-export function UIUXDesignSection() {
+export function SEOServicesSection() {
   return (
     <section className="py-16">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          
-          {/* Left Side - Image */}
-          <motion.div
-            className="relative"
-            whileHover={{ y: -6, scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 200, damping: 20 }}
-          >
-            <div className="relative aspect-square rounded-lg overflow-hidden">
-              <Image
-                src={image1}
-                alt="Modern office workspace with colorful wall art"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </motion.div>
 
           {/* Right Side - Content */}
           <div>
             <h2 className="text-4xl font-bold text-black mb-4">
-              UI/UX Design
+              SEO Services
             </h2>
 
             <p className="text-base leading-relaxed mb-8">
-              At Inforisen, we believe everyone should have a great user experience, whether at work or in their free
-              time. We create memorable products for businesses and consumers, and we provide easy-to-use design systems
-              for smooth product updates.
+              At Inforisen, we believe everyone should have a great user experience, whether at work or in their free time. We create memorable products for businesses and consumers, and we provide easy-to-use design systems for smooth product updates.
             </p>
 
             {/* Services List */}
@@ -92,6 +73,22 @@ export function UIUXDesignSection() {
               ))}
             </div>
           </div>
+          
+          {/* Left Side - Image */}
+          <motion.div
+            className="relative"
+            whileHover={{ y: -6, scale: 1.03 }}
+            transition={{ type: "spring", stiffness: 200, damping: 20 }}
+          >
+            <div className="relative aspect-square rounded-lg overflow-hidden">
+              <Image
+                src={image1}
+                alt="SEO dashboard and analytics mockup with revenue graph"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </motion.div>
 
         </div>
       </div>

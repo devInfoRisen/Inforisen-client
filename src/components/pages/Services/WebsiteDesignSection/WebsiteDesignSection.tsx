@@ -4,19 +4,19 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
 import { motion } from "framer-motion"
-import image1 from "@/assets/uiux.png"
+import image1 from "@/assets/uiux.png"  
 
 const services = [
-  { id: "01", name: "UX UI Design", slug: "ux-ui-design" },
-  { id: "02", name: "UX Consulting", slug: "ux-consulting" },
-  { id: "03", name: "UX Audit", slug: "ux-audit" },
-  { id: "04", name: "UX Research", slug: "ux-research" },
-  { id: "05", name: "Usability Testing", slug: "usability-testing" },
-  { id: "06", name: "Wireframe & Prototyping", slug: "wireframe-prototyping" },
-  { id: "07", name: "Design System", slug: "design-system" },
+  { id: "01", name: "Web Design", slug: "web-design" },
+  { id: "02", name: "SaaS Website Design", slug: "saas-website-design" },
+  { id: "03", name: "B2B Website Design", slug: "b2b-website-design" },
+  { id: "04", name: "Corporate Website", slug: "corporate-website" },
+  { id: "05", name: "Web App Design", slug: "web-app-design" },
+  { id: "06", name: "E-Commerce Website", slug: "e-commerce-website" },
+  { id: "07", name: "Website Redesign", slug: "website-redesign" },
 ]
 
-export function UIUXDesignSection() {
+export function WebsiteDesignDevelopmentSection() {   // ← you can rename the component if needed
   return (
     <section className="py-16">
       <div className="container mx-auto">
@@ -30,8 +30,8 @@ export function UIUXDesignSection() {
           >
             <div className="relative aspect-square rounded-lg overflow-hidden">
               <Image
-                src={image1}
-                alt="Modern office workspace with colorful wall art"
+                src={image1}  // ← replace with your actual mockup image import
+                alt="Website design mockups on devices"
                 fill
                 className="object-cover"
               />
@@ -41,13 +41,11 @@ export function UIUXDesignSection() {
           {/* Right Side - Content */}
           <div>
             <h2 className="text-4xl font-bold text-black mb-4">
-              UI/UX Design
+              Website Design & Development
             </h2>
 
             <p className="text-base leading-relaxed mb-8">
-              At Inforisen, we believe everyone should have a great user experience, whether at work or in their free
-              time. We create memorable products for businesses and consumers, and we provide easy-to-use design systems
-              for smooth product updates.
+              At Inforisen, we believe everyone should have a great user experience, whether at work or in their free time. We create memorable products for businesses and consumers, and we provide easy-to-use design systems for smooth product updates.
             </p>
 
             {/* Services List */}
