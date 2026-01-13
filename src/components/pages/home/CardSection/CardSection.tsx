@@ -1,5 +1,5 @@
 "use client"
-import { ArrowRight, ArrowUpRight } from "lucide-react"
+import {  ArrowUpRight } from "lucide-react"
 import arrow from "@/assets/logo/arrow.png";
 import Image from "next/image";
 import card1 from "@/assets/card1.png"
@@ -114,7 +114,7 @@ export default function CardSection() {
 
         {/* Cards */}
         <div className="space-y-8">
-          {cards.map((card, index) => (
+          {cards.map((card) => (
             <div key={card.id} className={`${card.bgColor} rounded-3xl overflow-hidden shadow-lg`}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                 {/* Left Content */}

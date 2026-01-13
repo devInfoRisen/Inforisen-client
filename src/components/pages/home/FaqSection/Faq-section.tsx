@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowUpRight, ChevronDown } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 import faq from "@/assets/faq.png"
 
 import Link from "next/link"

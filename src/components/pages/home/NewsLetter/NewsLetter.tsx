@@ -5,9 +5,9 @@ import type React from "react"
 import { useState } from "react"
 import Marquee from "react-fast-marquee"
 import { Instagram, Linkedin, Send } from "lucide-react"
-import { ArrowUpRight } from "lucide-react"
+
 import { Button } from "@/components/ui/MyButton/MyButton"
-import image1 from "@/assets/ceo-pic.webp";
+
 import Image from "next/image"
 
 // Custom social icons that aren't in Lucide

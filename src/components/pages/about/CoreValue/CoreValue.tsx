@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/MyButton/MyButton"
-import { ArrowUpRight } from "lucide-react"
+
 import Image from "next/image"
 import image1 from '@/assets/core.png'
 

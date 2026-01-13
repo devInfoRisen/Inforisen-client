@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { ArrowUpRight } from "lucide-react"
+
 import { Button } from "@/components/ui/MyButton/MyButton"
 import image1 from "@/assets/excellence0.png"
 import image2 from "@/assets/excellence1.png"

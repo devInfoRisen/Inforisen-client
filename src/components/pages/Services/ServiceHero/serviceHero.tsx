@@ -1,7 +1,5 @@
 "use client"
 
-import { Button } from "@/components/ui/MyButton/MyButton"
-import Link from "next/link"
 import { useEffect, useState } from "react"
 
 export function ServiceHero() {

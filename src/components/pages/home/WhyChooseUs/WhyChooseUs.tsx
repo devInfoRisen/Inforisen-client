@@ -1,5 +1,5 @@
 import { Headset, Settings, Palette, Clock, RefreshCw, Users } from "lucide-react"
-import bgimage from "@/assets/whychoose.png";
+
 import SectionHeader from "@/components/shared/SectionTopHeader/SectionTopHeader";
 import arrow from "@/assets/logo/arrow.png";
 

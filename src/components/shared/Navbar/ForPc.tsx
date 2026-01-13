@@ -8,7 +8,7 @@ import { ArrowUpRight } from "lucide-react";
 
 const ForPc = () => {
   return (
-    <div className="w-full flex justify-center pt-4">
+    <div className="w-full flex justify-center pt-4 ">
       {/* Glass Navbar */}
      <div
   className="
