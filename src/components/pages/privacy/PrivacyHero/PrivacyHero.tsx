@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/MyButton/MyButton";
 import PrimaryButton from "@/components/ui/MyButton/PrimaryButton";
 import Link from "next/link";
 
-export default function HeroSection2() {
+export default function PrivacyHero() {
   return (
     <header
       role="banner"
@@ -35,27 +35,15 @@ export default function HeroSection2() {
       <div className="flex h-full justify-center items-center min-h-[800]">
         <div className="relative text-center z-20 h-full">
           {/* Main Heading – SEO friendly */}
-          <h1 className="mb-6 text-5xl font-medium leading-tight tracking-tight text-gray-900 md:text-6xl lg:text-7xl">
-            <span className="font-playfair italic">Reveal</span> your advantage
-            <br />& transform for <span className="font-playfair italic">growth.</span>
+          <h1 className="mb-6 text-5xl  font-medium leading-tight tracking-tight text-gray-900 md:text-6xl lg:text-7xl">
+            <span className="">Privacy</span>
+             <span className="font-playfair italic"> Policy</span>
           </h1>
 
           {/* Subheading */}
-          <p className="mx-auto mb-10 max-w-xl text-base text-gray-600 md:text-lg">
-            We create digital experiences, products and services across the
-            globe. Transform your business into genuine momentum.
-          </p>
+               
 
-          {/* Call to Action Buttons */}
-          <nav aria-label="Hero Actions" className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/contact">
-              <Button>Book A Call</Button>
-            </Link>
-
-            <Link href="/works">
-              <Button variant="secondary">Our Portfolio</Button>
-            </Link>
-          </nav>
+       
         </div>
       </div>
     </header>

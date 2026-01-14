@@ -72,7 +72,7 @@ export function WorkingProcess() {
   }
 
   return (
-    <section className="bg-[#f5f5f0] text-[#1a1a1a] py-16">
+    <section className=" text-[#1a1a1a] py-16">
       <div className="container mx-auto">
         {/* Header */}
         <div className="md:mb-12 mb-8 ">

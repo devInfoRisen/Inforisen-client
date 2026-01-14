@@ -2,6 +2,7 @@
 import {  ArrowUpRight } from "lucide-react"
 import arrow from "@/assets/logo/arrow.png";
 import Image from "next/image";
+import { useRouter } from "next/navigation"; // <-- add this
 import card1 from "@/assets/card1.png"
 import card2 from "@/assets/card2.png"
 import card3 from "@/assets/card3.png"
@@ -11,6 +12,12 @@ import card6 from "@/assets/card6.png"
 import card7 from "@/assets/card7.png"
 import { Button } from "@/components/ui/MyButton/MyButton";
 import SectionHeader from "@/components/shared/SectionTopHeader/SectionTopHeader";
+import Link from "next/link";
+
+// helper to convert category to slug
+const toSlug = (text: string) =>
+  text.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9\-]/g, "");
+
 
 const cards = [
   {
@@ -92,87 +99,88 @@ const cards = [
   },
 ]
 
+
 export default function CardSection() {
+  const router = useRouter(); // <-- use router for navigation
+
   return (
     <main className="min-h-screen  py-16">
       <div className="container mx-auto">
         {/* Header */}
-       {/* Header */}
-<SectionHeader
-  label="WORK INDUSTRY"
-  title="Proven Success"
-  titleSecondLine="in"
-  italicTitle="Every Industry"
-  arrowSrc={arrow}
-  arrowTop="-10%"
-  arrowLeft="18%"
-/>
-
-
-
-
+        <SectionHeader
+          label="WORK INDUSTRY"
+          title="Proven Success"
+          titleSecondLine="in"
+          italicTitle="Every Industry"
+          arrowSrc={arrow}
+          arrowTop="-10%"
+          arrowLeft="18%"
+        />
 
         {/* Cards */}
         <div className="space-y-8">
-          {cards.map((card) => (
-            <div key={card.id} className={`${card.bgColor} rounded-3xl overflow-hidden shadow-lg`}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                {/* Left Content */}
-                <div className="p-6 md:p-12 flex flex-col justify-center">
-                  <p className="text-xs font-bold text-gray-700 tracking-widest mb-4 opacity-75">{card.category}</p>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">{card.title}</h2>
-                  <p className="text-gray-800 mb-6 leading-relaxed text-sm md:text-base">{card.description}</p>
-               <div className="group flex items-center gap-3  ">
-    <span className="text-sm font-bold text-gray-800">
-      View Details
-    </span>
+          {cards.map((card) => {
+            const slug = toSlug(card.category); // <-- convert category to slug
+            return (
+              <div key={card.id} className={`${card.bgColor} rounded-3xl overflow-hidden shadow-lg`}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+                  {/* Left Content */}
+                  <div className="p-6 md:p-12 flex flex-col justify-center">
+                    <p className="text-xs font-bold text-gray-700 tracking-widest mb-4 opacity-75">{slug}</p> {/* show slug */}
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4">{card.title}</h2>
+                    <p className="text-gray-800 mb-6 leading-relaxed text-sm md:text-base">{card.description}</p>
+                    
+                    <div
+                      className="group flex items-center gap-3 cursor-pointer"
+                      onClick={() => router.push(`/works/${slug}`)} // <-- navigate on click
+                    >
+                      <span className="text-sm font-bold text-gray-800">
+                        View Details
+                      </span>
 
-    {/* Circle stays fixed */}
-  {/* Circle stays fixed */}
-<span
-  className="flex items-center justify-center w-8 h-8 rounded-full transition-colors duration-300"
-  style={{ backgroundColor: card.circleColor }} // dynamic different color
->
-  <ArrowUpRight
-    size={16}
-    className="
-      text-white
-      transition-transform duration-300 ease-out
-      group-hover:rotate-45
-      group-active:rotate-90 
-    "
-  />
-</span>
+                      {/* Circle */}
+                      <span
+                        className="flex items-center justify-center w-8 h-8 rounded-full transition-colors duration-300"
+                        style={{ backgroundColor: card.circleColor }}
+                      >
+                        <ArrowUpRight
+                          size={16}
+                          className="
+                            text-white
+                            transition-transform duration-300 ease-out
+                            group-hover:rotate-45
+                            group-active:rotate-90 
+                          "
+                        />
+                      </span>
+                    </div>
+                  </div>
 
-  </div>
-                </div>
-
-                {/* Right Image */}
-                <div className="relative hidden md:block">
-                  {/* Diagonal stripes background */}
-               
-
-                  {/* Image */}
-                  <div className="relative h-64 md:h-80 flex items-center justify-center p-8">
-                    <Image
-                      src={card.image || "/placeholder.svg"}
-                      width={600}
-                      height={600}
-                      
-                      alt={card.title}
-                      className="max-w-full max-h-full object-contain drop-shadow-lg"
-                    />
+                  {/* Right Image */}
+                  <div className="relative hidden md:block">
+                    <div className="relative h-64 md:h-80 flex items-center justify-center p-8">
+                      <Image
+                        src={card.image || "/placeholder.svg"}
+                        width={600}
+                        height={600}
+                        alt={card.title}
+                        className="max-w-full max-h-full object-contain drop-shadow-lg"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
+
         <div className="mt-4 flex items-center justify-center">
-        <Button variant="primary" iconType="arrow-up-right">
-  Explore All
-</Button>
-</div>
+          <Link href="/works" >
+          <Button variant="primary" iconType="arrow-up-right">
+            Explore All
+          </Button>
+          </Link>
+        </div>
       </div>
     </main>
   )

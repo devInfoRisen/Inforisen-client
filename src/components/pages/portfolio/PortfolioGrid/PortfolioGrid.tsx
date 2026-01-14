@@ -49,7 +49,7 @@ export function PortfolioGrid() {
   }, [currentProjects])
 
   const ProjectCard = ({ project }: { project: (typeof projectsData)[0] }) => (
-    <Link href={`/projects/${project.slug}`} className="group block">
+    <Link href={`/works/${project.slug}`} className="group block">
       <div className="flex flex-col gap-4">
         {/* Image Container */}
         <div className="relative w-full aspect-[4/3] md:aspect-[4/2.25] rounded-2xl overflow-hidden bg-muted">

@@ -36,7 +36,7 @@ export function Footer() {
   ]
 
   const quickLinks2 = [
-    { title: "Sitemap", href: "/sitemap" },
+    // { title: "Sitemap", href: "/sitemap" },
     { title: "Privacy Policy", href: "/privacy-policy" },
     { title: "Terms & Condition", href: "/terms" },
   ]

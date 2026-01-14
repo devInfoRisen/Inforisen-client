@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/MyButton/MyButton"
 import { ArrowUpRight } from "lucide-react"
 import arrowSrc from "@/assets/logo/arrow.png"
 import Image from "next/image"
+import Link from "next/link"
 
 
 export function AboutHero() {
@@ -51,10 +52,11 @@ export function AboutHero() {
           We turn ideas into seamless, Beautiful designs. Let's build digital experiences that not only look stunning
           but also deliver real results.
         </p>
-
+<Link href="/about-us" >
          <Button variant="primary" iconType="arrow-up-right">
   Learn More
 </Button>
+</Link>
       </div>
     </section>
   )

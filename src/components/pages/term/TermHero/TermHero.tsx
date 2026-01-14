@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/MyButton/MyButton";
 import PrimaryButton from "@/components/ui/MyButton/PrimaryButton";
 import Link from "next/link";
 
-export default function HeroSection2() {
+export default function TermHero() {
   return (
     <header
       role="banner"
@@ -33,31 +33,16 @@ export default function HeroSection2() {
       <div className="h-full absolute lg:right-[400px] lg:w-[80px] md:w-[60px] sm:w-[40px] w-[40px]  md:right-[300px] sm:right-[200px] right-[200px] border-1 border-[#FFFFFF40] bg-gradient-to-r from-[#FFFFFF33] to-[#FFFFFF00] z-10"></div>
 
       <div className="flex h-full justify-center items-center min-h-[800]">
-        <div className="relative text-center z-20 h-full">
-          {/* Main Heading – SEO friendly */}
-          <h1 className="mb-6 text-5xl font-medium leading-tight tracking-tight text-gray-900 md:text-6xl lg:text-7xl">
-            <span className="font-playfair italic">Reveal</span> your advantage
-            <br />& transform for <span className="font-playfair italic">growth.</span>
-          </h1>
+  <div className="relative text-center z-20 h-full">
+    {/* Main Heading – SEO friendly */}
+    <h1 className="mb-6 text-5xl font-medium leading-tight tracking-tight text-gray-900 md:text-6xl lg:text-7xl">
+      <span>Terms</span>
+      <br className="block sm:hidden" />
+      <span className="font-playfair italic"> & Conditions.</span>
+    </h1>
+  </div>
+</div>
 
-          {/* Subheading */}
-          <p className="mx-auto mb-10 max-w-xl text-base text-gray-600 md:text-lg">
-            We create digital experiences, products and services across the
-            globe. Transform your business into genuine momentum.
-          </p>
-
-          {/* Call to Action Buttons */}
-          <nav aria-label="Hero Actions" className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/contact">
-              <Button>Book A Call</Button>
-            </Link>
-
-            <Link href="/works">
-              <Button variant="secondary">Our Portfolio</Button>
-            </Link>
-          </nav>
-        </div>
-      </div>
     </header>
   );
 }

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/MyButton/MyButton";
 import PrimaryButton from "@/components/ui/MyButton/PrimaryButton";
 import Link from "next/link";
 
-export default function HeroSection2() {
+export default function ServiceDetailHero() {
   return (
     <header
       role="banner"
@@ -36,26 +36,17 @@ export default function HeroSection2() {
         <div className="relative text-center z-20 h-full">
           {/* Main Heading – SEO friendly */}
           <h1 className="mb-6 text-5xl font-medium leading-tight tracking-tight text-gray-900 md:text-6xl lg:text-7xl">
-            <span className="font-playfair italic">Reveal</span> your advantage
-            <br />& transform for <span className="font-playfair italic">growth.</span>
+            <span className=" font-semibold">UX UI Design</span>
+            <br /> <span className="font-playfair font-normal">Service</span>
           </h1>
 
           {/* Subheading */}
-          <p className="mx-auto mb-10 max-w-xl text-base text-gray-600 md:text-lg">
-            We create digital experiences, products and services across the
-            globe. Transform your business into genuine momentum.
+          <p className="mx-auto mb-10 max-w-[650px] text-base text-gray-600 md:text-lg">
+           Transform your digital experience with innovative UI & UX design. Our expert team creates user-friendly, visually appealing, and high-performance web and mobile user interfaces. From concept to launch, we ensure a process that enhances user engagement, satisfaction, and business growth.
           </p>
 
           {/* Call to Action Buttons */}
-          <nav aria-label="Hero Actions" className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/contact">
-              <Button>Book A Call</Button>
-            </Link>
-
-            <Link href="/works">
-              <Button variant="secondary">Our Portfolio</Button>
-            </Link>
-          </nav>
+         
         </div>
       </div>
     </header>
