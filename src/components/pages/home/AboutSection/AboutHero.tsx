@@ -1,5 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
+
 import { Button } from "@/components/ui/MyButton/MyButton"
-import { ArrowUpRight } from "lucide-react"
+
 import arrowSrc from "@/assets/logo/arrow.png"
 import Image from "next/image"
 import Link from "next/link"

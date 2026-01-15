@@ -1,3 +1,4 @@
+
 "use client"
 
 import Image from "next/image"
@@ -12,7 +13,6 @@ import "swiper/css/effect-cards"
 
 import "swiper/css"
 
-import image1 from "@/assets/arrow-testimonail.png"
 import image2 from "@/assets/testimonial.png"
 
 /* ------------------ DATA ------------------ */
@@ -187,8 +187,10 @@ export function Testimonials() {
     nextEl: nextRef.current,
   }}
   onBeforeInit={(swiper) => {
+    /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
     // @ts-ignore
     swiper.params.navigation.prevEl = prevRef.current
+    /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
     // @ts-ignore
     swiper.params.navigation.nextEl = nextRef.current
   }}

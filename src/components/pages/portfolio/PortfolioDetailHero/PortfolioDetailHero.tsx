@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
-import PrimaryButton from "@/components/ui/MyButton/PrimaryButton"
-import Link from "next/link"
+
 import Image from "next/image"
 import { ArrowUp } from "lucide-react"
 import imageGrowfollows from "@/assets/portfoliodetail1.png"

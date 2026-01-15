@@ -1,5 +1,4 @@
-import PrimaryButton from "@/components/ui/MyButton/PrimaryButton";
-import Link from "next/link";
+
 
 export default function AboutHero() {
   return (

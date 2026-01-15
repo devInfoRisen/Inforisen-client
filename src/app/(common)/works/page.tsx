@@ -1,4 +1,4 @@
-import { CoreValues } from '@/components/pages/about/CoreValue/CoreValue'
+
 import MarqueeNav from '@/components/pages/home/MarqueNav/MarqueNav'
 import { NewsletterCta } from '@/components/pages/home/NewsLetter/NewsLetter'
 import { PortfolioGrid } from '@/components/pages/portfolio/PortfolioGrid/PortfolioGrid'

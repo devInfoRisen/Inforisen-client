@@ -3,12 +3,12 @@
 import type React from "react"
 
 import { useState } from "react"
-import Marquee from "react-fast-marquee"
+
 import { Instagram, Linkedin, Send } from "lucide-react"
 
 import { Button } from "@/components/ui/MyButton/MyButton"
 
-import Image from "next/image"
+
 
 // Custom social icons that aren't in Lucide
 const DribbbleIcon = () => (
@@ -60,13 +60,7 @@ const XIcon = () => (
   </svg>
 )
 
-const avatars = [
-  "/ceo-pic.webp",
-  "/ceo-pic.webp",
-  "/ceo-pic.webp",
-  "/ceo-pic.webp",
-  
-]
+
 
 const socialLinks = [
   { icon: DribbbleIcon, href: "#", label: "Dribbble", color: "hover:text-pink-500 hover:border-pink-500" },

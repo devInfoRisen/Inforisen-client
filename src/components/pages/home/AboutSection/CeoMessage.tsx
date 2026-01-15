@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+
 export function CeoMessage() {
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 gap-11 items-start mt-20">
