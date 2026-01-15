@@ -25,7 +25,7 @@ const ForPc = () => {
 >
 
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 w-48">
+        <Link href="/" className="flex items-center z-10 gap-2 w-48">
           <Image
             src={logo}
             alt="Inforisen"

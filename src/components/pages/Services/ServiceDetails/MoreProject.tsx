@@ -37,7 +37,7 @@ const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
   </button>
 )
 
-export default function RelatedProjects() {
+export default function MoreProjects() {
   const sliderSettings = {
     infinite: true,
     slidesToShow: 3,
@@ -56,10 +56,10 @@ export default function RelatedProjects() {
 
   return (
     <section className="py-16 bg-[#EDEAE3] relative grid grid-cols-1">
-      <div className="container mx-auto ">
+      <div className="container mx-auto px-6 lg:px-20">
         {/* Title */}
         <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-10">
-          Related <span className="font-playfair font-normal">Projects</span>  
+          Some of our <span className="font-playfair font-normal">Projects</span>  
         </h2>
 
         {/* Slider */}

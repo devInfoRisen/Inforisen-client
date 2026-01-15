@@ -1,110 +1,56 @@
-"use client"
+import PrimaryButton from "@/components/ui/MyButton/PrimaryButton";
+import Link from "next/link";
 
-import { useEffect, useState } from "react"
-
-export function ServiceHero() {
-  const [barWidth, setBarWidth] = useState(74)
-  const [gapWidth, setGapWidth] = useState(2)
-
-  const leftBars = [
-    { opacity: 0.5, color: "rgba(245,190,210,0.9)" },
-    { opacity: 0.45, color: "rgba(250,185,215,0.85)" },
-    { opacity: 0.5, color: "rgba(255,180,210,0.8)" },
-    { opacity: 0.45, color: "rgba(250,175,205,0.75)" },
-    { opacity: 0.4, color: "rgba(245,185,210,0.7)" },
-    { opacity: 0.35, color: "rgba(250,190,215,0.6)" },
-    { opacity: 0.3, color: "rgba(255,195,220,0.4)" },
-    { opacity: 0.3, color: "rgba(255,195,220,0.3)" },
-    { opacity: 0.3, color: "rgba(255,195,220,0.1)" },
- 
-  ]
-
-  const rightBars = [
-    { opacity: 0.5, color: "rgba(200,235,250,0.95)" },
-      { opacity: 0.4, color: "rgba(195,240,250,0.9)" },
-    { opacity: 0.45, color: "rgba(195,235,245,0.85)" },
-    { opacity: 0.5, color: "rgba(190,230,240,0.79)" },
-    { opacity: 0.45, color: "rgba(185,235,250,0.75)" },
-    { opacity: 0.4, color: "rgba(195,240,250,0.7)" },
-    { opacity: 0.35, color: "rgba(200,240,245,0.5)" },
-    { opacity: 0.35, color: "rgba(190,240,245,0.3)" },
-    { opacity: 0.35, color: "rgba(200,230,245,0.1)" },
-
-    
- 
-  ]
-
-  // Update widths on resize
-  useEffect(() => {
-    const updateWidths = () => {
-      const w = window.innerWidth
-      if (w < 768) {
-        setBarWidth(40)
-        setGapWidth(1)
-      } else if (w < 1024) {
-        setBarWidth(60)
-        setGapWidth(1)
-      } else {
-        setBarWidth(74)
-        setGapWidth(0.85)
-      }
-    }
-    updateWidths()
-    window.addEventListener("resize", updateWidths)
-    return () => window.removeEventListener("resize", updateWidths)
-  }, [])
-
+export default function ServiceHero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#f8f8f8] to-[#f0f0f0]">
-      {/* Left Bars */}
-      <div className="absolute left-0 top-0 h-full flex">
-        {leftBars.map((bar, idx) => (
-          <div
-            key={idx}
-            className="h-full"
-            style={{
-              width: barWidth,
-              marginRight: idx < leftBars.length - 1 ? `${gapWidth}px` : '0',
-              opacity: bar.opacity,
-              background: bar.color,
-            }}
-          />
-        ))}
-      </div>
+    <header
+      role="banner"
+      className="relative overflow-hidden bg-gradient-to-b from-[#f8f8f8] to-[#f0f0f0]"
+    >
+      {/* Left Rounded Colors Bubble */}
+      <div className="lg:w-[380px] lg:h-[380px] md:w-[250px] sm:w-[250px] w-[300px] md:h-[250px] sm:h-[250px] h-[300px] absolute left-0 top-10 rounded-full blur-[100px] bg-gradient-to-b from-[#EFA6C1] to-[#F4BDFF] z-0 "></div>
+      <div className="lg:w-[380px] lg:h-[380px] md:w-[250px] sm:w-[250px] w-[300px] md:h-[250px] sm:h-[250px] h-[300px] absolute  left-0 bottom-10 rounded-full blur-[100px] bg-gradient-to-b from-[#EFA6C1] to-[#F4BDFF] z-0 lg:block md:block hidden"></div>
 
-      {/* Right Bars (same count as left, original colors) */}
-      <div className="absolute right-0 top-0 h-full flex">
-        {[...rightBars].slice(0, leftBars.length).reverse().map((bar, idx) => (
-          <div
-            key={idx}
-            className="h-full"
-            style={{
-              width: barWidth,
-              marginLeft: idx < leftBars.length - 1 ? `${gapWidth}px` : '0',
-              opacity: bar.opacity,
-              background: bar.color,
-            }}
-          />
-        ))}
-      </div>
+      {/* Right Rounded Colors Bubble */}
+      <div className="lg:w-[380px] lg:h-[380px] md:w-[250px] sm:w-[250px] w-[300px] md:h-[250px] sm:h-[250px] h-[300px] absolute right-[-20px] top-10 rounded-full blur-[100px] bg-gradient-to-b from-[#1EB9A280] to-[#617BFC80] z-0 lg:block md:block hidden"></div>
+      <div className="lg:w-[380px] lg:h-[380px] md:w-[250px] sm:w-[250px] w-[300px] md:h-[250px] sm:h-[250px] h-[300px] absolute  right-0 bottom-10 rounded-full blur-[100px] bg-gradient-to-b from-[#1EB9A280] to-[#617BFC80] z-0 "></div>
 
-      {/* Content */}
-      <div className="relative z-10 flex min-h-screen items-center justify-center">
-        <div className="mx-auto max-w-5xl px-4 text-center">
+      {/* Left Side Shades */}
+      <div className="h-full absolute lg:left-0 lg:w-[80px] md:w-[60px] sm:w-[40px] w-[40px] md:left-0 sm:left-0 left-0 border-1 border-[#FFFFFF40] bg-gradient-to-r from-[#FFFFFF33] to-[#FFFFFF00] z-10 "></div>
+      <div className="h-full absolute lg:left-[80px] lg:w-[80px] md:w-[60px] sm:w-[40px] w-[40px] md:left-[60px] sm:left-[40px] left-[40px] border-1 border-[#FFFFFF40] bg-gradient-to-r from-[#FFFFFF33] to-[#FFFFFF00] z-10"></div>
+      <div className="h-full absolute lg:left-[160px] lg:w-[80px] md:w-[60px] sm:w-[40px] w-[40px] md:left-[120px] sm:left-[80px] left-[80px] border-1 border-[#FFFFFF40] bg-gradient-to-r from-[#FFFFFF33] to-[#FFFFFF00] z-10"></div>
+      <div className="h-full absolute lg:left-[240px] lg:w-[80px] md:w-[60px] sm:w-[40px] w-[40px] md:left-[180px] sm:left-[120px] left-[120px] border-1 border-[#FFFFFF40] bg-gradient-to-r from-[#FFFFFF33] to-[#FFFFFF00] z-10"></div>
+      <div className="h-full absolute lg:left-[320px] lg:w-[80px] md:w-[60px] sm:w-[40px] w-[40px] md:left-[240px] sm:left-[160px] left-[160px] border-1 border-[#FFFFFF40] bg-gradient-to-r from-[#FFFFFF33] to-[#FFFFFF00] z-10"></div>
+      <div className="h-full absolute lg:left-[400px] lg:w-[80px] md:w-[60px] sm:w-[40px] w-[40px] md:left-[300px] sm:left-[200px] left-[200px] border-1 border-[#FFFFFF40] bg-gradient-to-r from-[#FFFFFF33] to-[#FFFFFF00] z-10"></div>
+
+      {/* Right Side Shade */}
+      <div className="h-full absolute lg:right-0 lg:w-[80px] md:w-[60px] sm:w-[40px] w-[40px] md:right-0 sm:right-0 right-0 border-1 border-[#FFFFFF40] bg-gradient-to-r from-[#FFFFFF33] to-[#FFFFFF00] z-10 "></div>
+      <div className="h-full absolute lg:right-[80px] lg:w-[80px] md:w-[60px] sm:w-[40px] w-[40px]  md:right-[60px] sm:right-[40px] right-[40px] border-1 border-[#FFFFFF40] bg-gradient-to-r from-[#FFFFFF33] to-[#FFFFFF00] z-10"></div>
+      <div className="h-full absolute lg:right-[160px] lg:w-[80px] md:w-[60px] sm:w-[40px] w-[40px]  md:right-[120px] sm:right-[80px] right-[80px] border-1 border-[#FFFFFF40] bg-gradient-to-r from-[#FFFFFF33] to-[#FFFFFF00] z-10"></div>
+      <div className="h-full absolute lg:right-[240px] lg:w-[80px] md:w-[60px] sm:w-[40px] w-[40px]  md:right-[180px] sm:right-[120px] right-[120px] border-1 border-[#FFFFFF40] bg-gradient-to-r from-[#FFFFFF33] to-[#FFFFFF00] z-10"></div>
+      <div className="h-full absolute lg:right-[320px] lg:w-[80px] md:w-[60px] sm:w-[40px] w-[40px]  md:right-[240px] sm:right-[160px] right-[160px] border-1 border-[#FFFFFF40] bg-gradient-to-r from-[#FFFFFF33] to-[#FFFFFF00] z-10"></div>
+      <div className="h-full absolute lg:right-[400px] lg:w-[80px] md:w-[60px] sm:w-[40px] w-[40px]  md:right-[300px] sm:right-[200px] right-[200px] border-1 border-[#FFFFFF40] bg-gradient-to-r from-[#FFFFFF33] to-[#FFFFFF00] z-10"></div>
+
+      <div className="flex h-full justify-center items-center min-h-[800]">
+        <div className="relative text-center z-20 h-full">
               <p className="text-sm font-semibold text-gray-600 mb-2 flex items-center justify-center gap-2">
-       <div className="w-[6px] h-[6px] rounded-full bg-blue-500" />
+       <div className="w-2 h-2 rounded-full bg-blue-500" />
         SERVICES
       </p>
+          {/* Main Heading – SEO friendly */}
           <h1 className="mb-6 text-5xl font-medium leading-tight tracking-tight text-gray-900 md:text-6xl lg:text-7xl">
             <span className="font-playfair italic">Transforming</span> great ideas into
-            <br />remarkable <span className="font-playfair italic">products.</span>
+            <br />remarkable <span className="font-playfair italic">products</span>
           </h1>
-          <p className="mx-auto mb-10 max-w-xl text-base text-gray-600 md:text-lg">
-          Inforisen partners with ambitious business leaders to build brands that drive alignment and unlock growth from the inside out.
+
+          {/* Subheading */}
+          <p className="mx-auto mb-10 max-w-[650px]  text-base text-gray-600 md:text-lg">
+         Inforisen partners with ambitious business leaders to build brands that drive alignment and unlock growth from the inside out.
           </p>
-          
+
+         
         </div>
       </div>
-    </section>
-  )
+    </header>
+  );
 }

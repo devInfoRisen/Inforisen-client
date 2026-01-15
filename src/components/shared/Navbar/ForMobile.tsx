@@ -16,12 +16,12 @@ const ForMobile = () => {
     <div className="flex justify-between items-center px-4 lg:hidden">
       {/* Logo */}
       <Link href="/">
-        <div className="flex items-center h-16 w-20">
+        <div className="flex z-10 items-center h-16 w-32">
           <Image
             src={logo}
             alt="Logo"
-            width={160}
-            height={40}
+            width={250}
+            height={50}
             className="object-contain"
           />
         </div>
@@ -55,15 +55,18 @@ const ForMobile = () => {
         }
       >
         {/* Glass Header */}
-        <div className="px-4 py-4 border-b bg-white/70 backdrop-blur-md">
-          <Image
-            src={logo}
-            alt="Logo"
-            width={140}
-            height={40}
-            className="object-contain"
-          />
-        </div>
+       <div className="px-4 py-4 border-b bg-white/70 backdrop-blur-md">
+  <Link href="/" className="inline-block">
+    <Image
+      src={logo}
+      alt="Logo"
+      width={140}
+      height={40}
+      className="object-contain cursor-pointer"
+    />
+  </Link>
+</div>
+
 
         {/* Content */}
         <div className="px-4 py-6 space-y-6">

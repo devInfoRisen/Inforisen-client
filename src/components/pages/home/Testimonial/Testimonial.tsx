@@ -109,7 +109,8 @@ function TestimonialCard({
         </div>
 
         {/* Image */}
-        <div className="relative h-64 md:h-full">
+        <div className="relative h-80 sm:h-72 md:h-full">
+
           <Image
             src={testimonial.image}
             alt={testimonial.name}
@@ -151,13 +152,13 @@ export function Testimonials() {
         {/* Cards */}
         <div className="relative mt-8 grid grid-cols-1">
           {/* Decorative arrow */}
-          <div className="absolute -left-8 sm:-left-4 top-0 hidden sm:block">
+          {/* <div className="absolute -left-8 sm:-left-4 top-0 hidden sm:block">
             <Image
               src={image1}
               alt="Arrow"
               className="max-w-[160px] md:max-w-[200px] object-contain"
             />
-          </div>
+          </div> */}
 
           {/* Navigation */}
           <button
@@ -175,7 +176,7 @@ export function Testimonials() {
           </button>
 
           {/* Swiper */}
-          <div className="relative h-[520px] sm:h-[480px] md:h-[380px] mx-4 sm:mx-8 md:mx-20">
+          <div className="relative h-[720px] sm:h-[700px] md:h-[380px] mx-4 sm:mx-8 md:mx-20">
            <Swiper
   modules={[Navigation, EffectCards]}
   effect="cards"

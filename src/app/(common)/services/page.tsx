@@ -5,7 +5,8 @@ import { GraphicDesignSection } from '@/components/pages/Services/GraphicDesignS
 import { LogoBrandIdentitySection } from '@/components/pages/Services/LogoBrand/LogoBrand'
 import { SaaSProductsSection } from '@/components/pages/Services/Saas/SaasSection'
 import { SEOServicesSection } from '@/components/pages/Services/SeoService/SeoServiceSection'
-import { ServiceHero } from '@/components/pages/Services/ServiceHero/serviceHero'
+import ServiceHero from '@/components/pages/Services/ServiceHero/serviceHero'
+
 import { SoftwareDevelopmentSection } from '@/components/pages/Services/SoftwareDev/SoftwareDevSection'
 import { UIUXDesignSection } from '@/components/pages/Services/Uiux/uiux'
 import { WebsiteDesignDevelopmentSection } from '@/components/pages/Services/WebsiteDesignSection/WebsiteDesignSection'

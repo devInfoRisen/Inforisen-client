@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/MyButton/MyButton";
-import PrimaryButton from "@/components/ui/MyButton/PrimaryButton";
 import Link from "next/link";
 
 export default function HeroSection2() {

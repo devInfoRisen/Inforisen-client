@@ -1,5 +1,5 @@
 "use client"
-import {  ArrowUpRight } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 import arrow from "@/assets/logo/arrow.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation"; // <-- add this
@@ -118,67 +118,74 @@ export default function CardSection() {
         />
 
         {/* Cards */}
-        <div className="space-y-8">
-          {cards.map((card) => {
-            const slug = toSlug(card.category); // <-- convert category to slug
-            return (
-              <div key={card.id} className={`${card.bgColor} rounded-3xl overflow-hidden shadow-lg`}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                  {/* Left Content */}
-                  <div className="p-6 md:p-12 flex flex-col justify-center">
-                    <p className="text-xs font-bold text-gray-700 tracking-widest mb-4 opacity-75">{slug}</p> {/* show slug */}
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">{card.title}</h2>
-                    <p className="text-gray-800 mb-6 leading-relaxed text-sm md:text-base">{card.description}</p>
-                    
-                    <div
-                      className="group flex items-center gap-3 cursor-pointer"
-                      onClick={() => router.push(`/works/${slug}`)} // <-- navigate on click
-                    >
-                      <span className="text-sm font-bold text-gray-800">
-                        View Details
-                      </span>
+        {/* Cards */}
+<div className="space-y-8">
+  {cards.map((card) => {
+    const slug = toSlug(card.category);
+    return (
+      <div key={card.id} className={`${card.bgColor} rounded-3xl overflow-hidden shadow-lg`}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+          
+          {/* Left Content */}
+          <div className="p-6 md:p-12 flex flex-col justify-center order-2 md:order-1">
+            <p className="text-xs font-bold text-gray-700 tracking-widest mb-4 opacity-75">{slug}</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{card.title}</h2>
+            <p className="text-gray-800 mb-6 leading-relaxed text-sm md:text-base">{card.description}</p>
 
-                      {/* Circle */}
-                      <span
-                        className="flex items-center justify-center w-8 h-8 rounded-full transition-colors duration-300"
-                        style={{ backgroundColor: card.circleColor }}
-                      >
-                        <ArrowUpRight
-                          size={16}
-                          className="
-                            text-white
-                            transition-transform duration-300 ease-out
-                            group-hover:rotate-45
-                            group-active:rotate-90 
-                          "
-                        />
-                      </span>
-                    </div>
-                  </div>
+            <div
+              className="group flex items-center gap-3 cursor-pointer"
+              onClick={() => router.push(`/works/${slug}`)}
+            >
+              <span className="text-sm font-bold text-gray-800">View Details</span>
 
-                  {/* Right Image */}
-                  <div className="relative hidden md:block">
-                    <div className="relative h-64 md:h-80 flex items-center justify-center p-8">
-                      <Image
-                        src={card.image || "/placeholder.svg"}
-                        width={600}
-                        height={600}
-                        alt={card.title}
-                        className="max-w-full max-h-full object-contain drop-shadow-lg"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )
-          })}
+              <span
+                className="
+                  flex items-center justify-center
+                  w-8 h-8 rounded-full
+                  transition-all duration-300
+                  group-hover:brightness-90
+                  group-active:brightness-75
+                "
+                style={{ backgroundColor: card.circleColor }}
+              >
+                <ArrowUpRight
+                  size={16}
+                  className="
+                    text-white
+                    transition-transform duration-300 ease-out
+                    group-hover:rotate-45
+                    group-active:rotate-90 
+                  "
+                />
+              </span>
+            </div>
+          </div>
+
+          {/* Right Image */}
+          <div className="relative block order-1 md:order-2">
+            <div className="relative h-64 md:h-80 flex items-center justify-center p-4 lg:p-8">
+              <Image
+                src={card.image || "/placeholder.svg"}
+                width={600}
+                height={600}
+                alt={card.title}
+                className="max-w-full max-h-full object-contain "
+              />
+            </div>
+          </div>
+
         </div>
+      </div>
+    )
+  })}
+</div>
+
 
         <div className="mt-4 flex items-center justify-center">
           <Link href="/works" >
-          <Button variant="primary" iconType="arrow-up-right">
-            Explore All
-          </Button>
+            <Button variant="primary" iconType="arrow-up-right">
+              Explore All
+            </Button>
           </Link>
         </div>
       </div>

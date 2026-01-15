@@ -26,7 +26,7 @@ const budgetOptions = [
 const benefits = [
   "Claim 30 minutes of consultation",
   "We're happy to sign an NDA upon request.",
-  "Get access to a team of dedicated product specialists.",
+  "Get access to a team of dedicated product.",
 ]
 
 export function ContactForm() {
@@ -44,8 +44,8 @@ export function ContactForm() {
   }
 
   return (
-    <section className="bg-[#0d0d0d] container mx-auto rounded-2xl py-14 sm:py-20 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-[#0d0d0d] container mx-auto rounded-2xl py-14 sm:py-20 ">
+      <div className="  md:p-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* LEFT */}
           <div className="text-center lg:text-left">

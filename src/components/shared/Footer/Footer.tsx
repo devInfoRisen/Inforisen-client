@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import logo from "@/assets/logo/logo.png";
+import logo from "@/assets/logo/footer-logo.png";
 import footer from "@/assets/footer.png";
 
 
@@ -27,8 +27,8 @@ export function Footer() {
   ]
 
   const quickLinks = [
-    { title: "Work", href: "/work" },
-    { title: "About", href: "/about" },
+    { title: "Work", href: "/works" },
+    { title: "About", href: "/about-us" },
     { title: "Contact", href: "/contact" },
     { title: "Pricing", href: "/pricing" },
     { title: "Career", href: "/career" },
@@ -65,12 +65,12 @@ export function Footer() {
 
       <div className="container mx-auto pt-16 pb-8 relative z-10">
         {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4  gap-12 mb-16">
           {/* Company Info */}
           <div className="space-y-6">
             {/* Logo */}
-            <div className="w-10 h-10">
-               <Link href="/" className="flex items-center gap-2 w-48">
+            <div className="w-10 h-12">
+               <Link href="/" className="flex items-center gap-2 w-56">
           <Image
             src={logo}
             alt="Inforisen"

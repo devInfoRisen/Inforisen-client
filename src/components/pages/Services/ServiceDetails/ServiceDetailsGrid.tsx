@@ -1,123 +1,154 @@
 "use client"
 
-import Slider from "react-slick"
 import { useRef } from "react"
+import Slider from "react-slick"
+import { motion } from "framer-motion"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
-// 👉 slick styles (make sure these are imported once globally if needed)
+import SectionHeader from "@/components/shared/SectionTopHeader/SectionTopHeader"
+
+// assets
+import arrow from "@/assets/logo/arrow.png"
+import image1 from "@/assets/Rectangle 14.png"
+import image2 from "@/assets/Rectangle 15.png"
+import image3 from "@/assets/Rectangle 16.png"
+import image4 from "@/assets/Rectangle 17.png"
+import image5 from "@/assets/Rectangle 18.png"
+
+// slick styles (import once globally if already done)
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
-/* ------------------ Mock Data ------------------ */
+/* -------------------------------------------------------------------------- */
+/*                                   DATA                                     */
+/* -------------------------------------------------------------------------- */
+
 const services = [
   {
     title: "Brand Identity",
-    description: "Build a strong, memorable brand presence.",
-    image: "/images/service1.png",
+    image: image1,
+    href: "/services#ui-ux-design",
   },
   {
     title: "Web Design",
-    description: "Modern, conversion-focused web experiences.",
-    image: "/images/service2.png",
+    image: image2,
+    href: "/services#ui-ux-design",
   },
   {
     title: "UI/UX Design",
-    description: "User-centered interfaces that feel intuitive.",
-    image: "/images/service3.png",
+    image: image3,
+    href: "/services#ui-ux-design",
   },
   {
     title: "Development",
-    description: "Fast, scalable, production-ready builds.",
-    image: "/images/service4.png",
+    image: image4,
+    href: "/services#ui-ux-design",
   },
   {
     title: "SEO Optimization",
-    description: "Rank higher and get discovered faster.",
-    image: "/images/service5.png",
+    image: image5,
+    href: "/services#ui-ux-design",
   },
 ]
 
-/* ------------------ Card ------------------ */
-function ServiceCard({ service }: { service: any }) {
-  return (
-    <div className="h-full rounded-2xl border bg-white p-6 shadow-sm transition hover:shadow-md">
-      <div className="mb-4 relative h-40 w-full overflow-hidden rounded-xl">
-        <Image
-          src={service.image}
-          alt={service.title}
-          fill
-          className="object-cover"
-        />
-      </div>
+/* -------------------------------------------------------------------------- */
+/*                                COMPONENT                                   */
+/* -------------------------------------------------------------------------- */
 
-      <h3 className="mb-2 text-xl font-semibold">{service.title}</h3>
-      <p className="text-sm text-gray-600">{service.description}</p>
-    </div>
-  )
-}
-
-/* ------------------ Component ------------------ */
 export default function ServicesRowSlider() {
   const sliderRef = useRef<Slider | null>(null)
 
-  const settings = {
+  const sliderSettings = {
     dots: false,
+    arrows: false,
     infinite: true,
     speed: 500,
-    arrows: false,
-    slidesToShow: 3, // 👈 3 cards per row
+    slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1024, // tablet
-        settings: {
-          slidesToShow: 2,
-        },
+        breakpoint: 1024,
+        settings: { slidesToShow: 2 },
       },
       {
-        breakpoint: 640, // mobile
-        settings: {
-          slidesToShow: 1,
-        },
+        breakpoint: 640,
+        settings: { slidesToShow: 1 },
       },
     ],
   }
 
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-4">
+    <section className="py-20 grid grid-cols-1">
+      <div className="container mx-auto ">
 
-        {/* Header + Arrows */}
-        <div className="mb-12 flex items-center justify-between">
-          <h2 className="text-3xl font-semibold">
-            Our <span className="italic">Services</span>
-          </h2>
+        {/* ---------------- Header ---------------- */}
+        <div className="mb-10">
+          <SectionHeader
+            label="OUR SERVICES"
+            title="Full range of"
+            titleSecondLine="digital"
+            italicTitle="Services"
+            arrowSrc={arrow}
+            arrowTop="-8%"
+            arrowLeft="17%"
+          />
+        </div>
 
-          <div className="flex gap-2">
+        {/* ---------------- Slider Wrapper ---------------- */}
+        <div className="relative">
+
+          {/* Navigation Arrows (Top Right) */}
+          <div className="absolute -top-14 right-0 z-10 flex gap-2">
             <button
               onClick={() => sliderRef.current?.slickPrev()}
-              className="flex h-10 w-10 items-center justify-center rounded-full border transition hover:bg-black hover:text-white"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 transition hover:bg-black hover:text-white"
             >
               <ArrowLeft size={18} />
             </button>
+
             <button
               onClick={() => sliderRef.current?.slickNext()}
-              className="flex h-10 w-10 items-center justify-center rounded-full border transition hover:bg-black hover:text-white"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 transition hover:bg-black hover:text-white"
             >
               <ArrowRight size={18} />
             </button>
           </div>
-        </div>
 
-        {/* Slider */}
-        <Slider ref={sliderRef} {...settings}>
-          {services.map((service, index) => (
-            <div key={index} className="px-3">
-              <ServiceCard service={service} />
-            </div>
-          ))}
-        </Slider>
+          {/* ---------------- Slider ---------------- */}
+          <Slider ref={sliderRef} {...sliderSettings}>
+            {services.map((service, index) => (
+              <div key={index} className="px-3">
+                <Link href={service.href}>
+                  <motion.div
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="relative h-[300px] cursor-pointer overflow-hidden rounded-2xl group"
+                  >
+                    {/* Image */}
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover"
+                    />
+
+                    {/* Title */}
+                    <div className="absolute top-5 left-5 z-10 max-w-[180px]">
+                      <h3 className="text-lg md:text-[28px] font-bold text-black drop-shadow-lg">
+                        {service.title}
+                      </h3>
+                    </div>
+
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-black/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  </motion.div>
+                </Link>
+              </div>
+            ))}
+          </Slider>
+        </div>
       </div>
     </section>
   )

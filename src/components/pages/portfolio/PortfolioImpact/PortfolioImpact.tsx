@@ -6,7 +6,7 @@ import image2 from "@/assets/impact2.png"
 export default function ProjectImpact() {
   return (
     <section className=" py-20 ">
-      <div className="max-w-6xl mx-auto ">
+      <div className="container mx-auto ">
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6">
           Project <span className='font-playfair font-normal'>Impact</span>

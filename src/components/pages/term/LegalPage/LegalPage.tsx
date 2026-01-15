@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function LegalPage() {
   return (
-    <section className="container mx-auto text-justify ">
+    <section className="container mx-auto py-14 ">
       <div >
 
         {/* Cookies Section */}

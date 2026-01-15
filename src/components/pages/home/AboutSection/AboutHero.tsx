@@ -18,7 +18,7 @@ export function AboutHero() {
 
         {/* Decorative curved dashed line */}
         <div
-              className="mb-4 absolute transform -translate-x-1/2 flex justify-center top-[-6%] left-[30%]"
+              className="mb-4 absolute transform -translate-x-1/2 hidden lg:flex justify-center top-[-6%] left-[30%]"
             
             >
               <Image

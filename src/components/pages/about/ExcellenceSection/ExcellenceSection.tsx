@@ -3,12 +3,13 @@ import Image from "next/image"
 import { Button } from "@/components/ui/MyButton/MyButton"
 import image1 from "@/assets/excellence0.png"
 import image2 from "@/assets/excellence1.png"
+import Link from "next/link"
 
 
 export function ExcellenceSection() {
   return (
-    <section className="bg-[#0a0a12] py-16 px-8">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-[#0a0a12] py-16 ">
+      <div className="container mx-auto">
         {/* Header */}
         <h2 className="text-3xl md:text-4xl font-semibold text-white mb-8">
           <span className="italic font-normal font-serif">Redefining Excellence</span> Through
@@ -56,10 +57,13 @@ export function ExcellenceSection() {
 
             {/* CTA Button */}
             <div className="mt-8">
+              <Link href="/works">
               <Button  variant="primary"  iconType="arrow-up-right">
                 Explore Projects
            
               </Button>
+              </Link>
+
             </div>
 
             {/* Bottom Right Image */}

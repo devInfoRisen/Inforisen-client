@@ -138,7 +138,7 @@ export function CoreValues() {
 
         {/* CTA Banner */}
         <div className="bg-[#0d0d0d] rounded-3xl overflow-hidden">
-          <div className="flex flex-col md:flex-row px-8 py-8 md:px-16 md:py-12 ">
+          <div className="flex flex-col gap-20 md:gap-0 md:flex-row px-8 py-8 md:px-16 md:py-12 ">
             {/* Left Content */}
             <div className="flex flex-col justify-center md:w-1/2">
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4">

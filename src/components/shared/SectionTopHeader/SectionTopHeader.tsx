@@ -31,7 +31,7 @@ export default function SectionHeader({
 
       {/* Arrow */}
       <div
-        className="mb-4 absolute transform -translate-x-1/2 flex justify-center"
+        className="mb-4 hidden lg:flex absolute transform -translate-x-1/2  justify-center"
         style={{ top: arrowTop, left: arrowLeft }}
       >
         <Image

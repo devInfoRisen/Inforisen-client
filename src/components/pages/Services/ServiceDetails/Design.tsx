@@ -3,11 +3,12 @@
 import Image from 'next/image';
 import image1 from "@/assets/design.png"
 import { Button } from '@/components/ui/MyButton/MyButton';
+import Link from 'next/link';
 
 export default function DesignImpactSection() {
   return (
-    <section className="py-16 px-4 md:px-8 lg:px-16">
-      <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12">
+    <section className="lg:py-16 py-0">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center lg:gap-12  ">
         {/* Left Side - Image */}
         <div className="lg:w-1/2 w-full   relative">
           <div className=" rounded-2xl">
@@ -34,11 +35,12 @@ export default function DesignImpactSection() {
           <p className="text-gray-700 mb-8 leading-relaxed">
             Your brand's design speaks before you do. 80% of consumers recognize a brand just by its design & color! We use color psychology to design your brand to be memorable. Your brand's design speaks before you do. 80% of consumers recognize a brand just by its design & color! We use color psychology to design your brand to be memorable.
           </p>
-
+           <Link href="/contact">
           <Button iconType='arrow-up-right' >
             Create Your UX UI Design
            
           </Button>
+          </Link>
         </div>
       </div>
     </section>

@@ -42,7 +42,7 @@ export default function ProjectDetails({ slug }: ProjectDetailsProps) {
   const data = projectDetailsData[slug] ?? projectDetailsData["growfollows-website"]
 
   return (
-    <section className="flex flex-col gap-16 max-w-6xl mx-auto py-12">
+    <section className="flex flex-col gap-16 container mx-auto py-10 lg:py-0">
       
       {/* Project Description */}
       <div className="flex flex-col gap-6">

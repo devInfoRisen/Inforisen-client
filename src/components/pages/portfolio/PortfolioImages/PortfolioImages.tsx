@@ -4,10 +4,10 @@ import Image, { StaticImageData } from "next/image"
 import React from "react"
 
 // Import your images
-import projectImage1 from "@/assets/portdetails1.png"
-import projectImage2 from "@/assets/portdetails2.png"
-import projectImage3 from "@/assets/portdetails3.png"
-import projectImage4 from "@/assets/portdetails4.png"
+import projectImage1 from "@/assets/project1.png"
+import projectImage2 from "@/assets/project2.png"
+import projectImage3 from "@/assets/project3.png"
+
 
 interface ProjectImagesProps {
   slug: string
@@ -38,7 +38,7 @@ export default function ProjectImages({ slug }: ProjectImagesProps) {
 
   return (
     <div className="bg-gradient-to-t  from-[#0E3B76] to-[#0A0A0A] py-16 ">
-    <section className="flex flex-col gap-8 max-w-6xl mx-auto ">
+    <section className="flex flex-col gap-8 container mx-auto ">
       {/* Description */}
       <div className="flex flex-col gap-4">
         <h2 className="text-4xl md:text-5xl text-white  font-playfari font-normal"> Styleguide &

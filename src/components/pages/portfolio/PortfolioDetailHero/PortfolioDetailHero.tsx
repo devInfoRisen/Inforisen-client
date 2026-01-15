@@ -75,43 +75,44 @@ export default function PortfolioDetailHero({ slug }: PortfolioDetailHeroProps) 
         />
       ))}
 
-      {/* Hero Content */}
-      <div className="relative z-20 flex flex-col items-center justify-center min-h-[800px] px-4">
-        {/* Heading */}
-        <h1 className="mb-24 text-center text-5xl font-medium leading-tight tracking-tight text-gray-900 md:text-6xl lg:text-7xl">
-          {heroData.title}{' '}
-          <span className="font-playfair italic">{heroData.subtitle}</span>
-        </h1>
+     {/* Hero Content */}
+<div className="relative z-20 flex flex-col items-center justify-center min-h-[600px] px-4 sm:min-h-[700px] md:min-h-[750px] lg:min-h-[800px]">
+  {/* Heading */}
+  <h1 className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-tight tracking-tight text-gray-900">
+    {heroData.title}{' '}
+    <span className="font-playfair italic">{heroData.subtitle}</span>
+  </h1>
 
-        {/* Company Info */}
-        <div className="flex flex-row items-center justify-around w-full max-w-4xl text-center gap-4">
-          <p className="text-sm text-gray-500">
-            Company <br />
-            <span className=" text-lg text-gray-700 font-semibold">{heroData.company}</span>
-          </p>
-          <p className="text-sm text-gray-500">
-            Category <br />
-            <span className="font-semibold text-lg text-gray-700">{heroData.category}</span>
-          </p>
-          <p className="text-sm text-gray-500">
-            Duration <br />
-            <span className="font-semibold text-lg text-gray-700">{heroData.duration}</span>
-          </p>
-          <p className="text-sm text-gray-500 text-center">
-            Live View <br />
-            <a 
-              href={heroData.liveUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="hover:underline text-sm"
-            >
-              <span className="flex items-center justify-center gap-1 font-semibold text-lg text-gray-700">
-                {heroData.company} <ArrowUp size={16} />
-              </span>
-            </a>
-          </p>
-        </div>
-      </div>
+  {/* Company Info */}
+  <div className="flex flex-col md:flex-row items-center justify-around w-full max-w-4xl text-center gap-6 md:gap-4">
+    <p className="text-sm sm:text-base text-gray-500">
+      Company <br />
+      <span className="text-lg md:text-lg text-gray-700 font-semibold">{heroData.company}</span>
+    </p>
+    <p className="text-sm sm:text-base text-gray-500">
+      Category <br />
+      <span className="font-semibold text-lg md:text-lg text-gray-700">{heroData.category}</span>
+    </p>
+    <p className="text-sm sm:text-base text-gray-500">
+      Duration <br />
+      <span className="font-semibold text-lg md:text-lg text-gray-700">{heroData.duration}</span>
+    </p>
+    <p className="text-sm sm:text-base text-gray-500 text-center">
+      Live View <br />
+      <a 
+        href={heroData.liveUrl} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="hover:underline text-sm"
+      >
+        <span className="flex items-center justify-center gap-1 font-semibold text-lg text-gray-700">
+          {heroData.company} <ArrowUp size={16} />
+        </span>
+      </a>
+    </p>
+  </div>
+</div>
+
 
       {/* Hero Image */}
       <div
