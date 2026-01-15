@@ -44,7 +44,7 @@ export function ContactForm() {
   }
 
   return (
-    <section className="bg-[#0d0d0d] container mx-auto rounded-2xl py-14 sm:py-20 ">
+    <section className="bg-[#0d0d0d] container mx-auto rounded-none lg:rounded-2xl py-14 sm:py-20 ">
       <div className="  md:p-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* LEFT */}

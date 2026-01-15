@@ -163,7 +163,7 @@ export default function CardSection() {
 
           {/* Right Image */}
           <div className="relative block order-1 md:order-2">
-            <div className="relative h-64 md:h-80 flex items-center justify-center p-4 lg:p-8">
+            <div className="relative h-64 md:h-[400px] flex items-center justify-center p-4 lg:p-8">
               <Image
                 src={card.image || "/placeholder.svg"}
                 width={600}

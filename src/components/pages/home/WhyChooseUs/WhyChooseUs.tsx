@@ -57,7 +57,7 @@ export function WhyChooseUs() {
       <div className="absolute inset-0 bg-[#0a0a14]/60" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-8 py-16">
+      <div className="relative z-10 container mx-auto px-8 py-16 lg:py-[140px]">
         {/* Header */}
 <div className="mb-12 text-white [&_span]:!text-white [&_p]:!text-white">
   <SectionHeader

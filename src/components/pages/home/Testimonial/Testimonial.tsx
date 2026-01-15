@@ -62,6 +62,18 @@ const testimonials = [
     company: "elevate",
     image: image2,
   },
+  {
+    id: 5,
+    quote:
+      "Their creative vision and technical skills are remarkable. They understood our brand perfectly and delivered a website that truly represents who we are.",
+    subQuote:
+      "The team went above and beyond to ensure every detail was perfect.",
+    name: "Nabil Hasan",
+    title: "Brand Manager",
+    company: "elevate",
+    image: image2,
+  },
+ 
 ]
 
 /* ------------------ CARD ------------------ */
@@ -183,7 +195,8 @@ export function Testimonials() {
   grabCursor={true}
   slidesPerView={1}
   centeredSlides={true}
-  initialSlide={1}
+  initialSlide={Math.floor(testimonials.length / 2)}
+
   cardsEffect={{
     slideShadows: false,
   }}
