@@ -192,8 +192,10 @@ export function Testimonials() {
     nextEl: nextRef.current,
   }}
   onBeforeInit={(swiper) => {
+        /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
     // @ts-ignore
     swiper.params.navigation.prevEl = prevRef.current
+        /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
     // @ts-ignore
     swiper.params.navigation.nextEl = nextRef.current
   }}
