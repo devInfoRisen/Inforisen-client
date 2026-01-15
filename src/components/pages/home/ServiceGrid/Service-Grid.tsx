@@ -115,7 +115,7 @@ export function ServicesGrid() {
 
                 {/* Service Title */}
                 <div className="absolute top-5 left-5 z-10">
-                  <h3 className="text-lg md:text-[28px] font-bold text-black drop-shadow-lg max-w-[180px]">
+                  <h3 className="text-lg md:text-[28px] font-bold text-black  max-w-[180px]">
                     {service.title}
                   </h3>
                 </div>

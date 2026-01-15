@@ -177,31 +177,38 @@ export function Testimonials() {
 
           {/* Swiper */}
           <div className="relative h-[720px] sm:h-[700px] md:h-[380px] mx-4 sm:mx-8 md:mx-20">
-           <Swiper
+          <Swiper
   modules={[Navigation, EffectCards]}
   effect="cards"
   grabCursor={true}
   slidesPerView={1}
+  centeredSlides={true}
+  initialSlide={1}
+  cardsEffect={{
+    slideShadows: false,
+  }}
   navigation={{
     prevEl: prevRef.current,
     nextEl: nextRef.current,
   }}
   onBeforeInit={(swiper) => {
-    /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
     // @ts-ignore
     swiper.params.navigation.prevEl = prevRef.current
-    /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
     // @ts-ignore
     swiper.params.navigation.nextEl = nextRef.current
   }}
   className="h-full"
 >
   {testimonials.map((item) => (
-    <SwiperSlide key={item.id} className="h-full">
+    <SwiperSlide
+      key={item.id}
+      className="h-full rounded-2xl overflow-hidden"
+    >
       <TestimonialCard testimonial={item} className="h-full" />
     </SwiperSlide>
   ))}
 </Swiper>
+
 
           </div>
         </div>
