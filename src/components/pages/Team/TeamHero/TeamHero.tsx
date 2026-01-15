@@ -30,7 +30,7 @@ export default function TeamHero() {
       <div className="h-full absolute lg:right-[320px] lg:w-[80px] md:w-[60px] sm:w-[40px] w-[40px]  md:right-[240px] sm:right-[160px] right-[160px] border-1 border-[#FFFFFF40] bg-gradient-to-r from-[#FFFFFF33] to-[#FFFFFF00] z-10"></div>
       <div className="h-full absolute lg:right-[400px] lg:w-[80px] md:w-[60px] sm:w-[40px] w-[40px]  md:right-[300px] sm:right-[200px] right-[200px] border-1 border-[#FFFFFF40] bg-gradient-to-r from-[#FFFFFF33] to-[#FFFFFF00] z-10"></div>
 
-      <div className="flex h-full justify-center items-center min-h-[800]">
+      <div className="flex h-full justify-center items-center min-h-[800px]">
         <div className="relative text-center z-20 h-full">
               <p className="text-sm font-semibold text-gray-600 mb-2 flex items-center justify-center gap-2">
        <div className="w-2 h-2 rounded-full bg-blue-500" />
